@@ -15,7 +15,7 @@ resource "aws_budgets_budget" "ec2" {
     cost_filter {
         name = "Service"
         values = [
-        "Amazon Elastic Compute Cloud - Compute",
+            "Amazon Elastic Compute Cloud - Compute",
         ]
     }
 
@@ -24,7 +24,7 @@ resource "aws_budgets_budget" "ec2" {
         threshold                  = 50
         threshold_type             = "PERCENTAGE"
         notification_type          = "ACTUAL"
-        subscriber_email_addresses = ["var.email"]
+        subscriber_email_addresses = [var.email]  # Sin comillas
     }
 
     notification {
@@ -32,14 +32,15 @@ resource "aws_budgets_budget" "ec2" {
         threshold                  = 25
         threshold_type             = "PERCENTAGE"
         notification_type          = "ACTUAL"
-        subscriber_email_addresses = ["var.email"]
+        subscriber_email_addresses = [var.email]  # Sin comillas
     }
+    
     notification {
-    comparison_operator        = "GREATER_THAN"
-    threshold                  = 80
-    threshold_type             = "PERCENTAGE"
-    notification_type          = "ACTUAL"
-    subscriber_email_addresses = ["var.email"]
+        comparison_operator        = "GREATER_THAN"
+        threshold                  = 80
+        threshold_type             = "PERCENTAGE"
+        notification_type          = "ACTUAL"
+        subscriber_email_addresses = [var.email]  # Sin comillas
     }
 
     tags = {
