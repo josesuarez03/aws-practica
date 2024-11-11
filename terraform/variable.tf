@@ -7,7 +7,7 @@ variable "tags" {
     description = "Tags to apply to all resources"
     type        = map(string)
     default     = {
-        nombre = "josesuarez"
+        nombre = "terraform"
         iac    = "terraform"
         env    = "Automatización y despliegue"
     }

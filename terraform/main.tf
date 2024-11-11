@@ -65,3 +65,10 @@ resource "aws_budgets_budget" "ec2" {
         Tag2 = "Value2"
     }
 }
+
+module "iam" {
+    source     = "./iam"
+    user1_name = "josesuarez" 
+    user2_name = "terraform"
+}
+
